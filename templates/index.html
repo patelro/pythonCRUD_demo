@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block head %}
+<title>Pyhton CRUD</title>
+{% endblock %} {% block body %}
+<div style="text-align: center;" class="content">
+  <h1 style="text-align: center;">Users</h1>
+
+  <form action="/" method="POST">
+    First Name: <input type="text" name="firstName" id="firstName" required />
+    <br />
+    Last Name: <input type="text" name="lastName" id="lastName" required />
+    <br />
+    Email: <input type="text" name="userName" id="userName" required />
+    <br />
+    User Name: <input type="text" name="userName" id="userName" required />
+    <br />
+    <input type="submit" value="Add User" />
+  </form>
+
+  <table>
+    <tr>
+      <td>First Name</td>
+      <td>Last Name</td>
+      <td>User Name</td>
+      <td>Actions</td>
+    </tr>
+    <tr>
+      {% for data in records %}
+      <td>{{ data[1] }}</td>
+      <td>{{ data[2] }}</td>
+      <td>{{ data[3] }}</td>
+      <td>
+        <button><a href="/update/{{data[0]}}">Update</a></button>
+        <br />
+        <button><a href="/delete/{{data[0]}}">Delete</a></button>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

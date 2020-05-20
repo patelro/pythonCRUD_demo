@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block head %}
+<title>Python CRUD</title>
+{% endblock %} {% block body %}
+<div style="text-align: center;" class="content">
+  <h2 style="text-align: center;">Update User</h2>
+
+  <form action="/update/{{record[0]}}" method="POST">
+    First Name:
+    <input type="text" name="firstName" id="firstName" value="{{record[1]}}" />
+    <br />
+    Last Name:
+    <input type="text" name="lastName" id="lastName" value="{{record[2]}}" />
+    <br />
+    User Name:
+    <input type="text" name="userName" id="userName" value="{{record[3]}}" />
+    <br />
+    <input type="submit" value="Update User" />
+  </form>
+</div>
+{% endblock %}
